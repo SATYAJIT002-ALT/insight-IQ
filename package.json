@@ -1,0 +1,13 @@
+{
+  "name": "insightiq-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm install --legacy-peer-deps && npm run build",
+    "start": "cd frontend && npm run start"
+  },
+  "dependencies": {
+    "next": "^15.1.0"
+  }
+}
