@@ -23,6 +23,7 @@ jobs:
       - name: Verify Backend Import Integrity
         run: |
           cd backend
+          export PYTHONPATH=.
           python -c "import app.main; print('FastAPI Backend imports successfully!')"
 
   build-frontend:
