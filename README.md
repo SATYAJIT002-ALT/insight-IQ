@@ -1,15 +1,20 @@
 # InsightIQ — Enterprise Business Intelligence Analytics Platform
 
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://insight-iq-io8j.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SATYAJIT002-ALT/insight-IQ)
+
 ![InsightIQ Banner](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=400&fit=crop)
 
-**InsightIQ** is a full-stack, enterprise-grade Business Intelligence & Predictive Analytics Platform designed with an Apple + Stripe + Vercel inspired futuristic dark UI, interactive 3D visualizations (Three.js / React Three Fiber), real FastAPI backend, PostgreSQL database schema, automated data cleaning (Pandas/NumPy), Natural Language SQL Studio, Scikit-Learn time series forecasting, and multi-format PDF/Excel/CSV exports.
+🚀 **Live Vercel Application**: [https://insight-iq-io8j.vercel.app](https://insight-iq-io8j.vercel.app)
+
+**InsightIQ** is a full-stack, enterprise-grade Business Intelligence & Predictive Analytics Platform designed with an Apple + Stripe + Vercel inspired futuristic dark UI, interactive 3D visualizations (Three.js WebGL), real FastAPI backend, PostgreSQL database schema, automated data cleaning (Pandas/NumPy), Natural Language SQL Studio, Scikit-Learn time series forecasting, and multi-format PDF/Excel/CSV exports.
 
 ---
 
 ## 🌟 Key Platform Features
 
 - 🎨 **Futuristic Enterprise UI**: Dark mode by default, glassmorphic panels, aurora ambient glows, gradient borders, smooth Framer Motion transitions.
-- 🌐 **Interactive 3D Graphics**: Three.js & React Three Fiber rotating 3D Earth Globe with data nodes and interactive 3D Data Cube.
+- 🌐 **Interactive 3D Graphics**: Three.js WebGL rotating 3D Earth Globe with data nodes and interactive 3D Data Cube.
 - 📊 **Executive Dashboard & Real-Time KPIs**: 8 animated KPI cards (Total Revenue, Net Profit Margin, AOV, Conversion Rate, Active Accounts, etc.) with trend badges, multi-dimensional filters, and Recharts charts.
 - 📥 **Automated Data Ingestion Engine**: Drag-and-drop file uploader supporting CSV, Excel (.xlsx), and JSON with dynamic column type inspection and schema previews.
 - 🧹 **Pandas Data Quality & Cleaning Module**: Automated duplicate row removal, missing value imputation (median/mode), Z-score outlier detection (>3.0 std dev), date normalization, and data health scoring.
@@ -26,7 +31,7 @@
 ### Frontend
 - **Framework**: Next.js 15 (App Router), React 19, TypeScript
 - **Styling**: Tailwind CSS, Glassmorphism, Aurora Gradients
-- **Animations & 3D**: Framer Motion, Three.js, React Three Fiber, Drei
+- **Animations & 3D**: Framer Motion, Three.js WebGL
 - **Data Visualizations**: Recharts
 - **State Management**: Zustand
 - **Icons**: Lucide Icons
@@ -40,6 +45,7 @@
 - **Real-Time**: WebSockets
 
 ### DevOps & Infrastructure
+- **Cloud Deployment**: Vercel
 - **Containers**: Docker, Docker Compose
 - **Proxy**: Nginx
 - **CI/CD**: GitHub Actions
@@ -76,6 +82,13 @@ InsightIQ/
 ├── docker-compose.yml
 └── README.md
 ```
+
+---
+
+## 🌐 Live Production Deployment
+
+Access the live Vercel application here:
+- **Vercel Production App**: [https://insight-iq-io8j.vercel.app](https://insight-iq-io8j.vercel.app)
 
 ---
 
