@@ -1,11 +1,11 @@
 # InsightIQ — Enterprise Business Intelligence Analytics Platform
 
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://insight-iq-io8j.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://insight-iq-9fm7.vercel.app)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SATYAJIT002-ALT/insight-IQ)
 
 ![InsightIQ Banner](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=400&fit=crop)
 
-🚀 **Live Vercel Application**: [https://insight-iq-io8j.vercel.app](https://insight-iq-io8j.vercel.app)
+🚀 **Live Production Vercel Application**: [https://insight-iq-9fm7.vercel.app](https://insight-iq-9fm7.vercel.app)
 
 **InsightIQ** is a full-stack, enterprise-grade Business Intelligence & Predictive Analytics Platform designed with an Apple + Stripe + Vercel inspired futuristic dark UI, interactive 3D visualizations (Three.js WebGL), real FastAPI backend, PostgreSQL database schema, automated data cleaning (Pandas/NumPy), Natural Language SQL Studio, Scikit-Learn time series forecasting, and multi-format PDF/Excel/CSV exports.
 
@@ -88,7 +88,7 @@ InsightIQ/
 ## 🌐 Live Production Deployment
 
 Access the live Vercel application here:
-- **Vercel Production App**: [https://insight-iq-io8j.vercel.app](https://insight-iq-io8j.vercel.app)
+- **Vercel Production App**: [https://insight-iq-9fm7.vercel.app](https://insight-iq-9fm7.vercel.app)
 
 ---
 
