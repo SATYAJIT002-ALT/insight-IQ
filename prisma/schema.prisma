@@ -1,0 +1,173 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  ANALYST
+  VIEWER
+}
+
+enum AlertStatus {
+  ACTIVE
+  ACKNOWLEDGED
+  RESOLVED
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      Role     @default(ANALYST)
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  auditLogs AuditLog[]
+  reports   Report[]
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  sku         String   @unique
+  category    String
+  price       Float
+  cost        Float
+  stock       Int
+  createdAt   DateTime @default(now())
+  
+  orderItems  OrderItem[]
+  inventory   Inventory[]
+}
+
+model Customer {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  city      String
+  country   String
+  region    String
+  segment   String
+  createdAt DateTime @default(now())
+
+  orders    Order[]
+}
+
+model Order {
+  id         String      @id @default(uuid())
+  customerId String
+  customer   Customer    @relation(fields: [customerId], references: [id])
+  status     String
+  total      Float
+  region     String
+  orderDate  DateTime    @default(now())
+  
+  items      OrderItem[]
+  sales      Sale[]
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Float
+}
+
+model Sale {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  amount    Float
+  margin    Float
+  region    String
+  category  String
+  saleDate  DateTime @default(now())
+}
+
+model Inventory {
+  id          String   @id @default(uuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  warehouse   String
+  stockOnHand Int
+  reorderPoint Int
+  updatedAt   DateTime @updatedAt
+}
+
+model Region {
+  id       String @id @default(uuid())
+  name     String @unique
+  country  String
+  target   Float
+  achieved Float
+}
+
+model Employee {
+  id         String @id @default(uuid())
+  name       String
+  role       String
+  department String
+  quota      Float
+  salesTotal Float
+}
+
+model Alert {
+  id        String      @id @default(uuid())
+  title     String
+  message   String
+  severity  Severity    @default(MEDIUM)
+  status    AlertStatus @default(ACTIVE)
+  metric    String
+  threshold Float
+  current   Float
+  createdAt DateTime    @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  action    String
+  details   String
+  ipAddress String?
+  timestamp DateTime @default(now())
+}
+
+model Report {
+  id        String   @id @default(uuid())
+  title     String
+  type      String
+  format    String
+  config    String
+  createdById String
+  createdBy User     @relation(fields: [createdById], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model KPI {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  value     Float
+  target    Float
+  unit      String
+  trend     Float
+  updatedAt DateTime @updatedAt
+}
