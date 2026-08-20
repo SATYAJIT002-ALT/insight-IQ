@@ -139,6 +139,39 @@ export async function fetchInsights(): Promise<AIInsight[]> {
   }
 }
 
+export async function fetchAlerts(): Promise<AlertItem[]> {
+  try {
+    const res = await fetch(`${API_BASE}/alerts/list`);
+    if (!res.ok) throw new Error("API error");
+    return await res.json();
+  } catch (e) {
+    return [
+      {
+        id: "alt-1",
+        title: "Revenue Surge Detected",
+        message: "North America Enterprise sales exceeded quarterly forecast by 28%",
+        severity: "LOW",
+        status: "ACTIVE",
+        metric: "Revenue",
+        threshold: 4000000,
+        current: 4820000,
+        created_at: new Date().toISOString()
+      },
+      {
+        id: "alt-2",
+        title: "Inventory Shortage Risk",
+        message: "InsightIQ Neural Core stock below safety buffer in EU-Central warehouse",
+        severity: "HIGH",
+        status: "ACTIVE",
+        metric: "Inventory",
+        threshold: 50,
+        current: 18,
+        created_at: new Date().toISOString()
+      }
+    ];
+  }
+}
+
 export async function executeSQLQuery(query: string): Promise<SQLResult> {
   try {
     const res = await fetch(`${API_BASE}/sql/execute`, {

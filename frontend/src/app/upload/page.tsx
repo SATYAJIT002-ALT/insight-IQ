@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { useAppStore } from "@/store/useStore";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+
 export default function UploadPage() {
   const { uploadedDatasetResult, setUploadedDatasetResult, clearUploadedDataset } = useAppStore();
 
@@ -33,7 +35,7 @@ export default function UploadPage() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/upload/file", {
+      const res = await fetch(`${API_BASE}/upload/file`, {
         method: "POST",
         body: formData
       });

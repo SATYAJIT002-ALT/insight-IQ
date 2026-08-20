@@ -8,12 +8,21 @@ import {
   Sparkles, Terminal, Database, Sliders, LogOut, CheckCircle2
 } from "lucide-react";
 import { useAppStore } from "@/store/useStore";
+import { fetchAlerts } from "@/lib/api";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { user, searchQuery, setSearchQuery, unreadAlertCount, alerts, acknowledgeAlert, logout } = useAppStore();
+  const { user, searchQuery, setSearchQuery, unreadAlertCount, alerts, setAlerts, acknowledgeAlert, logout } = useAppStore();
   const [showAlertsMenu, setShowAlertsMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+
+  React.useEffect(() => {
+    const loadAlerts = async () => {
+      const data = await fetchAlerts();
+      setAlerts(data);
+    };
+    loadAlerts();
+  }, [setAlerts]);
 
   return (
     <header className="sticky top-0 z-50 w-full glass-panel border-b border-white/10 bg-gray-950/80 backdrop-blur-md px-4 lg:px-8 py-3 flex items-center justify-between">
