@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useAppStore } from "@/store/useStore";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://insight-iq-eiaz.onrender.com/api/v1";
 
 export default function UploadPage() {
   const { uploadedDatasetResult, setUploadedDatasetResult, clearUploadedDataset } = useAppStore();

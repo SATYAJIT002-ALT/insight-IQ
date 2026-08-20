@@ -1,6 +1,6 @@
 import { KPI, AlertItem, AIInsight, SQLResult, DataCleanReport } from "@/types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://insight-iq-eiaz.onrender.com/api/v1";
 
 export async function fetchKPIs(region = "ALL", category = "ALL"): Promise<KPI[]> {
   try {
